@@ -10,9 +10,10 @@ body {
 h1 {
     font-size: 26px;
     line-height: 30px;
+    padding-top: 17px;
 }
 
-.clear, .delete {
+.delete {
     border-radius: 50%;
     border: 1px solid #C4C4C4;
     background-color: white;
@@ -21,12 +22,23 @@ h1 {
     padding: 3px 5px;
 }
 
+.pic {
+    border-radius: 50%;
+    background-color: #9953F1;
+    color: white;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 3px 5px;
+}
+
 .main {
-    margin: 0px auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
     width: 336px;
     background-color: #FFDC40;
 }
-.main, .task-list, .new-task {
+.main, .new-task {
     border: 1px solid #C4C4C4;
     border-radius: 10px;
 }
@@ -36,26 +48,28 @@ h1 {
     text-align: center;
 }
 
-.new-task, .task-list {
+.new-task {
     margin: 12px 25px;
 }
 
-.task, .task-item p {
+.task {
     width: 75%;
     height: 40px;
     font-size: 14px;
     line-height: 16px;
-}
-
-.task-item {
-    align-items: center;
-    display: flex;
-
-}
-
-input {
     border: none;
 }
+
 input:focus {
     outline: none;
+}
+button {
+    border: none;
+    background-color: white;
+}
+.action {
+    padding: 10px;
+    margin-bottom: 19px;
+    background-color: #833AE0;
+    color: white;
 }

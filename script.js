@@ -1,24 +1,15 @@
-let taskList = document.querySelector('.task-list');
-let newTask = document.querySelector('.task');
+let taskList = document.querySelector('.new-task');
+let newTask = `<div class="item"><input class="task" type="text" maxlength="27">
+<button class="delete">X</button></div>`;
 
 document.querySelector('.action').addEventListener('click', () => {
-    taskList.innerHTML += `
-    <div class="task-item">
-    <p>${newTask.value}</p>
-    <button class="delete">X</button>
-    </div>`;
-
-    newTask.value = "";
+    taskList.innerHTML += newTask;
 
     let deleteTask = document.querySelectorAll('.delete');
 
     deleteTask.forEach((item) => {
         item.addEventListener('click', () => {
-            this.document.querySelector('.task-item').remove();
+            this.document.querySelector('.item').remove();
         } )
     })
-});
-
-document.querySelector('.clear').addEventListener('click', () => {
-    newTask.value = "";
 });
