@@ -8,11 +8,29 @@ document.querySelector('.action').addEventListener('click', () => {
     newTask.innerHTML = `<input class="task" type="text" maxlength="27">
     <button class="delete">X</button>`;
     taskList.append(newTask);
-    
+   
     newTask.querySelector('.delete').addEventListener('click', () => {
         newTask.remove();
     })
-});
+
+    taskList.firstElementChild.querySelector('.delete').addEventListener('click', () => {
+        document.querySelector('.task').value = '';
+    });
+
+    // let taskListItem = document.querySelectorAll('.item');
+
+    // taskListItem.forEach((item) => {
+    //     item.querySelector('.delete').addEventListener('click', () => {
+    //         if (taskList.children.length > 1) {
+    //             item.remove();
+    //             console.log(taskList.children.length);
+    //         } else {
+    //             item.querySelector('.task').value = '';
+    //             console.log(taskList.children.length, item.querySelector('.task').value);
+    //             }
+    //     });
+    // });
+});    
 
 sortButton.addEventListener('click', () => {
     let sortRow = [];
