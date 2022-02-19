@@ -1,10 +1,10 @@
 let taskList = document.querySelector('.new-task');
 let sortButton = document.querySelector('.sort-tasks');
-let sortList = document.querySelectorAll('.sortEl');
+let ifSortAlfa = -1;
 
 document.querySelector('.action').addEventListener('click', () => {
     let newTask = document.createElement('div');
-    newTask.classList.add('item', 'sortEl');
+    newTask.classList.add('item');
     newTask.innerHTML = `<input class="task" type="text" maxlength="27">
     <button class="delete">X</button>`;
     taskList.append(newTask);
@@ -12,26 +12,19 @@ document.querySelector('.action').addEventListener('click', () => {
     newTask.querySelector('.delete').addEventListener('click', () => {
         newTask.remove();
     })
-    
-
 });
 
 sortButton.addEventListener('click', () => {
     let sortRow = [];
     document.querySelectorAll('.task').forEach((item) => {
         sortRow.push(item.value);
-
-        sortRow.sort((a,b) => {
-            if (!NaN) {
-                return a - b;
-            }
-          return a -b;
-        });
-        console.log(sortRow);
-        for (let i = 0; i < sortRow.length; i++) {
-            item.value = sortRow[i];
-        }
+    });
+    ifSortAlfa = !sortButton.classList.contains('reversed') ? 1 : -1;
+    sortRow.sort((a, b) => (a > b ? ifSortAlfa : ifSortAlfa * -1));
+    
+    document.querySelectorAll('.task').forEach((item, index) => {
+        item.value = sortRow[index];
     });
     
-    console.log(sortRow);
+    sortButton.classList.toggle('reversed');
 })
