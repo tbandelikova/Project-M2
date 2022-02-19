@@ -108,6 +108,24 @@ button {
     padding: 12px;
 }
 
-button.sort-tasks:hover {
-    
+.sort-tasks {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 25px;
+    min-width: 99%;
+}
+
+.sort-tasks div {
+    background-image: url(img/Group\ 34.png);
+    width: 25px;
+    height: 15px;
+}
+.sort-tasks:hover div {
+    background-image: url(img/Group\ 73.png);
+}
+.sort-tasks.reversed div {
+    background-image: url(img/Group\ 90.png);
+}
+.sort-tasks.reversed:hover div {
+    background-image: url(img/Group\ 91.png);
 }
