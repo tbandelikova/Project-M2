@@ -2,6 +2,14 @@ let taskList = document.querySelector('.new-task');
 let sortButton = document.querySelector('.sort-tasks');
 let ifSortAlfa = -1;
 
+document.querySelector('.delete').addEventListener('click', () => {
+    if (taskList.children.length > 1) {
+        document.querySelector('.delete').parentElement.remove();
+    } else {
+        document.querySelector('.delete').parentElement.querySelector('input').value = '';
+    } 
+});
+
 document.querySelector('.action').addEventListener('click', () => {
     let newTask = document.createElement('div');
     newTask.classList.add('item');
@@ -10,26 +18,12 @@ document.querySelector('.action').addEventListener('click', () => {
     taskList.append(newTask);
    
     newTask.querySelector('.delete').addEventListener('click', () => {
-        newTask.remove();
-    })
-
-    taskList.firstElementChild.querySelector('.delete').addEventListener('click', () => {
-        document.querySelector('.task').value = '';
+        if (taskList.children.length > 1) {
+            newTask.remove();
+        } else {
+            newTask.querySelector('input').value = '';
+        } 
     });
-
-    // let taskListItem = document.querySelectorAll('.item');
-
-    // taskListItem.forEach((item) => {
-    //     item.querySelector('.delete').addEventListener('click', () => {
-    //         if (taskList.children.length > 1) {
-    //             item.remove();
-    //             console.log(taskList.children.length);
-    //         } else {
-    //             item.querySelector('.task').value = '';
-    //             console.log(taskList.children.length, item.querySelector('.task').value);
-    //             }
-    //     });
-    // });
 });    
 
 sortButton.addEventListener('click', () => {
