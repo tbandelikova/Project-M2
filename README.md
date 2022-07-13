@@ -1,5 +1,6 @@
 # Project-M2
 «Трекер задач» для записи небольших задач в текстовом формате. Список должен поддерживать возможность добавления, изменения и удаления задач, сортировки по алфавиту.
+
 ![image](https://user-images.githubusercontent.com/93816022/178787807-5cac815b-3d7f-4f70-9b71-d38d0e573b4c.png) ![image](https://user-images.githubusercontent.com/93816022/178787985-2aa26dcc-d280-4a5f-b726-797d5a6ec8af.png) ![image](https://user-images.githubusercontent.com/93816022/178788132-cf8b1563-2d50-4ebe-8c7f-9067327d7965.png)
 
 Требования
