@@ -32,9 +32,8 @@ h1 {
 }
 
 .main {
-    position: absolute;
-    top: 30%;
-    left: 30%;
+    margin: 0 auto;
+    margin-top: 2rem;
     width: 336px;
     background-color: #FFDC40;
 }
